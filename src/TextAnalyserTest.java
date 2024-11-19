@@ -1,9 +1,8 @@
-
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class WordAndRowCounterTest {
+public class TextAnalyserTest {
 //Skriv ett program som läser in text ifrån kommandoraden rad för rad tills användaren skriver ordet stop.
 //
 //När användaren är klar skriver programmet ut antal tecken och hur många rader som användaren har skrivit, exklusive raden med ordet stop
@@ -30,32 +29,19 @@ public class WordAndRowCounterTest {
 //Har koll på det längsta ordet
 //Har koll på om användaren har skrivit ordet stop eller inte Programmet skall fortfarande ha minst 3 testfall och läggas upp på samma sätt i Github som i del 2
 
-//    @Test
-//    void addWords() {
-//        WordAndRowCounter wordAndRowCounter = new WordAndRowCounter();
-//        wordAndRowCounter.inputWords("Hej" + "jag heter" + "LoveNilsson");
-//        assertEquals("Hej" + "jag heter" + "LoveNilsson", WordAndRowCounter.getWords());
+    @Test
+    public void charCounter() {
+        TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow(new String[]{"Hej", "jag", "heter", "LoveNilsson"});
+        assertEquals(22, textAnalyserCharAndRow.charCount());
+    }
+    @Test
+    public void rowCounter() {
+        TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow(new String[]{"Hej", "jag", "heter", "LoveNilsson"});
+        assertEquals(4, textAnalyserCharAndRow.rowCount());
+    }
+//        @Test
+//    public void countWords() {
+//        TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow(new String[]{"Hej", "jag", "heter", "LoveNilsson"});
+//        assertEquals(4, TextAnalyserCharAndRow.wordCount());
 //    }
-
-//    @Test
-//    void countWords() {
-//        WordAndRowCounter wordAndRowCounter = new WordAndRowCounter();
-//        wordAndRowCounter.inputWords("Hej" + "jag heter" + "LoveNilsson");
-//        assertEquals(4, WordAndRowCounter.wordCount());
-//    }
-//
-//    @Test
-//    void rowCounter() {
-//        WordAndRowCounter wordAndRowCounter = new WordAndRowCounter();
-//        wordAndRowCounter.inputWords("Hej" + "jag heter" + "LoveNilsson");
-//        assertEquals(3, WordAndRowCounter.rowCount());
-//    }
-//
-//    @Test
-//    void charCounter() {
-//        WordAndRowCounter wordAndRowCounter = new WordAndRowCounter();
-//        wordAndRowCounter.inputWords("Hej" + "jag heter" + "LoveNilsson");
-//        assertEquals(22, WordAndRowCounter.charCount());
-//    }
-
 }
