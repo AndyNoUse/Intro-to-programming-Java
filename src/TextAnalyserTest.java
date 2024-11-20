@@ -31,12 +31,12 @@ public class TextAnalyserTest {
 
     @Test
     public void charCounter() {
-        TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow(new String[]{"Hej", "jag heter", "LoveNilsson"});
-        assertEquals(23, textAnalyserCharAndRow.charCount());
+        TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow("Hej jag heter LoveNilsson stop");
+        assertEquals(26, textAnalyserCharAndRow.charCount());
     }
     @Test
     public void rowCounter() {
-        TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow(new String[]{"Hej", "jag heter", "LoveNilsson"});
+        TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow("Hej jag heter LoveNilsson stop");
         assertEquals(4, textAnalyserCharAndRow.rowCount());
     }
 //        @Test
