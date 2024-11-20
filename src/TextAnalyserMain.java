@@ -30,16 +30,14 @@ public class TextAnalyserMain {
     //TEXT OCH SKRIVER RESULTATET KLASSEN
     public static void main(String[] args) {
         String input;
-
-
         Scanner scanner = new Scanner(System.in);
+
         do {
             System.out.print("Skriv din text så analyserar jag den, Avsluta med stop: ");
-
             input = scanner.nextLine();
 
-            TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow(input);
-
+        }while (!input.contains("stop"));
+        TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow(new String[]{input});
             System.out.println("Antal tecken (med blanksteg): " +
                     textAnalyserCharAndRow.charCount());
             System.out.println("Antal rader: " +
@@ -57,7 +55,6 @@ public class TextAnalyserMain {
 //                antalTecken = antalTecken + input.length();
 //                antalRader++;
 //            }
-//
 //        } while (!input.contains("stop"));
 //        System.out.println("Du skrev: ");
 //        System.out.println("Antal tecken (med blanksteg): " + antalTecken);
