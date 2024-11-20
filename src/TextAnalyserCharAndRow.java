@@ -15,7 +15,6 @@ public class TextAnalyserCharAndRow {
     }
 
     public int rowCount() {
-        antalRader += antalRader;
-        return antalRader;
+        return text.split(" ").length;
     }
 }
