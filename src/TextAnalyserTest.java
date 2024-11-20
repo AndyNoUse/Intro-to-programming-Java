@@ -31,13 +31,19 @@ public class TextAnalyserTest {
 
     @Test
     public void charCounter() {
-        TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow("Hej jag heter LoveNilsson stop");
-        assertEquals(26, textAnalyserCharAndRow.charCount());
+        TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow();
+        textAnalyserCharAndRow.addText("Hej");
+        textAnalyserCharAndRow.addText("jag heter LoveNilsson");
+        textAnalyserCharAndRow.addText("stop");
+        assertEquals(25, textAnalyserCharAndRow.charCount());
     }
     @Test
     public void rowCounter() {
-        TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow("Hej jag heter LoveNilsson stop");
-        assertEquals(4, textAnalyserCharAndRow.rowCount());
+        TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow();
+        textAnalyserCharAndRow.addText("Hej");
+        textAnalyserCharAndRow.addText("jag heter LoveNilsson");
+        textAnalyserCharAndRow.addText("stop");
+        assertEquals(2, textAnalyserCharAndRow.rowCount());
     }
 //        @Test
 //    public void countWords() {

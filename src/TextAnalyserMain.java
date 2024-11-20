@@ -5,24 +5,24 @@ public class TextAnalyserMain {
     //TEXT OCH SKRIVER RESULTATET KLASSEN
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String allinput = "";
-        String input;
+        String allText = "";
+        String text;
 
         do {
             System.out.print("Skriv din text så analyserar jag den, Avsluta med stop: ");
-            input = scanner.nextLine();
+            text = scanner.nextLine();
 
-            if (!input.contains("stop ")) {
-                allinput += input +" ";
+            if (!text.contains("stop")) {
+                allText += text;
             }
 
-        } while (!input.contains("stop"));
+        } while (!text.contains("stop"));
 
-        TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow(allinput);
+        TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
+        analyser.addText(allText);
 
-        System.out.println("Antal tecken (med blanksteg): " +
-                textAnalyserCharAndRow.charCount());
-        System.out.println("Antal rader: " +
-                textAnalyserCharAndRow.rowCount());
+        System.out.println("Antal tecken (med blanksteg): " + analyser.charCount());
+        System.out.println("Antal rader: " + analyser.rowCount());
+        System.out.println("text = " + allText);
     }
 }
