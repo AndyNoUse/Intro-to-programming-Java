@@ -44,8 +44,9 @@ public class TextAnalyserTest {
         textAnalyserCharAndRow.addText("Hej");
         textAnalyserCharAndRow.addText("jag heter LoveNilsson");
         textAnalyserCharAndRow.addText("Hej");
+        textAnalyserCharAndRow.addText("Hej");
         textAnalyserCharAndRow.addText("stop");
-        assertEquals(3, textAnalyserCharAndRow.getRowCount());
+        assertEquals(4, textAnalyserCharAndRow.getRowCount());
     }
 //        @Test
 //    public void countWords() {

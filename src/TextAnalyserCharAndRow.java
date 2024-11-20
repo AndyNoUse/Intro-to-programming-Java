@@ -5,6 +5,9 @@ public class TextAnalyserCharAndRow {
     private int antalRader = 0;
 
     public void addText(String text) {
+        if (text.equalsIgnoreCase("stop")){
+            return;
+        }
         this.text = text;
         antalRader++;
         antalTecken = text.length();
