@@ -33,17 +33,19 @@ public class TextAnalyserTest {
     public void charCounter() {
         TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow();
         textAnalyserCharAndRow.addText("Hej");
-        textAnalyserCharAndRow.addText("jag heter LoveNilsson");
+        textAnalyserCharAndRow.addText("jag heter Love Nilsson"); //27 tecken, 5 ord, 2 rader, längsta ordet Nilsson.
         textAnalyserCharAndRow.addText("stop");
-        assertEquals(25, textAnalyserCharAndRow.charCount());
+        System.out.println(textAnalyserCharAndRow);
+        assertEquals(26, textAnalyserCharAndRow.getCharCount());
     }
     @Test
     public void rowCounter() {
         TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow();
         textAnalyserCharAndRow.addText("Hej");
         textAnalyserCharAndRow.addText("jag heter LoveNilsson");
+        textAnalyserCharAndRow.addText("Hej");
         textAnalyserCharAndRow.addText("stop");
-        assertEquals(2, textAnalyserCharAndRow.rowCount());
+        assertEquals(3, textAnalyserCharAndRow.getRowCount());
     }
 //        @Test
 //    public void countWords() {

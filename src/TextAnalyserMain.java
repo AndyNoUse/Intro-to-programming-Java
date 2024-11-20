@@ -12,7 +12,7 @@ public class TextAnalyserMain {
             System.out.print("Skriv din text så analyserar jag den, Avsluta med stop: ");
             text = scanner.nextLine();
 
-            if (!text.contains("stop")) {
+            if (!text.equals("stop")) {
                 allText += text;
             }
 
@@ -21,8 +21,8 @@ public class TextAnalyserMain {
         TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
         analyser.addText(allText);
 
-        System.out.println("Antal tecken (med blanksteg): " + analyser.charCount());
-        System.out.println("Antal rader: " + analyser.rowCount());
+        System.out.println("Antal tecken (med blanksteg): " + analyser.getCharCount());
+        System.out.println("Antal rader: " + analyser.getRowCount());
         System.out.println("text = " + allText);
     }
 }

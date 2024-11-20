@@ -7,16 +7,15 @@ public class TextAnalyserCharAndRow {
     public void addText(String text) {
         this.text = text;
         antalRader++;
+        antalTecken = text.length();
     }
 
-
-    public int charCount() {
-        antalTecken = antalTecken + text.length();
+    public int getCharCount() {
         return antalTecken;
     }
 
-    public int rowCount() {
-        return antalRader-1;
+    public int getRowCount() {
+        return antalRader;
     }
 
 }
