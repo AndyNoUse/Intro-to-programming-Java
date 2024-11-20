@@ -10,7 +10,7 @@ public class TextAnalyserCharAndRow {
         }
         this.text = text;
         antalRader++;
-        antalTecken = text.length();
+        antalTecken += text.length();
     }
 
     public int getCharCount() {

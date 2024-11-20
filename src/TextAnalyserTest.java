@@ -31,26 +31,28 @@ public class TextAnalyserTest {
 
     @Test
     public void charCounter() {
-        TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow();
-        textAnalyserCharAndRow.addText("Hej");
-        textAnalyserCharAndRow.addText("jag heter Love Nilsson"); //27 tecken, 5 ord, 2 rader, längsta ordet Nilsson.
-        textAnalyserCharAndRow.addText("stop");
-        System.out.println(textAnalyserCharAndRow);
-        assertEquals(26, textAnalyserCharAndRow.getCharCount());
+        TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
+        analyser.addText("Hej");
+        analyser.addText("jag heter Love Nilsson"); //27 tecken, 5 ord, 2 rader, längsta ordet Nilsson.
+        analyser.addText("stop");
+        System.out.println(analyser);
+        assertEquals(25, analyser.getCharCount());
     }
     @Test
     public void rowCounter() {
-        TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow();
-        textAnalyserCharAndRow.addText("Hej");
-        textAnalyserCharAndRow.addText("jag heter LoveNilsson");
-        textAnalyserCharAndRow.addText("Hej");
-        textAnalyserCharAndRow.addText("Hej");
-        textAnalyserCharAndRow.addText("stop");
-        assertEquals(4, textAnalyserCharAndRow.getRowCount());
+        TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
+        analyser.addText("Hej");
+        analyser.addText("jag heter LoveNilsson");
+        analyser.addText("Hej");
+        analyser.addText("Hej");
+        analyser.addText("stop");
+        assertEquals(4, analyser.getRowCount());
     }
-//        @Test
-//    public void countWords() {
-//        TextAnalyserCharAndRow textAnalyserCharAndRow = new TextAnalyserCharAndRow(new String[]{"Hej", "jag", "heter", "LoveNilsson"});
-//        assertEquals(4, TextAnalyserCharAndRow.wordCount());
-//    }
+        @Test
+    public void countWords() {
+            TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
+            analyser.addText("Hej");
+            analyser.addText("jag heter LoveNilsson");
+        assertEquals(4, TextAnalyserCharAndRow.wordCount());
+    }
 }
