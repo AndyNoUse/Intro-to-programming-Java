@@ -4,25 +4,21 @@ public class TextAnalyserMain {
 
     //TEXT OCH SKRIVER RESULTATET KLASSEN
     public static void main(String[] args) {
+        boolean loop = true;
         Scanner scanner = new Scanner(System.in);
-        String allText = "";
+        TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
         String text;
 
         do {
             System.out.print("Skriv din text så analyserar jag den, Avsluta med stop: ");
             text = scanner.nextLine();
+            loop = analyser.addText(text);
 
-            if (!text.equals("stop")) {
-                allText += text;
-            }
+        } while (loop);
 
-        } while (!text.contains("stop"));
-
-        TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
-        analyser.addText(allText);
-
-        System.out.println("Antal tecken (med blanksteg): " + analyser.getCharCount());
-        System.out.println("Antal rader: " + analyser.getRowCount());
-        System.out.println("text = " + allText);
+        System.out.println("Antal tecken (med blanksteg): " + analyser.charCount());
+        System.out.println("Antal rader: " + analyser.rowCount());
+        System.out.println("Antal ord: " + analyser.wordCount());
+        System.out.println("Längsta ordet: " + analyser.getLongestWord() );
     }
 }

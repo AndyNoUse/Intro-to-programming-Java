@@ -35,24 +35,48 @@ public class TextAnalyserTest {
         analyser.addText("Hej");
         analyser.addText("jag heter Love Nilsson"); //27 tecken, 5 ord, 2 rader, längsta ordet Nilsson.
         analyser.addText("stop");
-        System.out.println(analyser);
-        assertEquals(25, analyser.getCharCount());
+        assertEquals(25, analyser.charCount());
     }
+
     @Test
     public void rowCounter() {
         TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
         analyser.addText("Hej");
-        analyser.addText("jag heter LoveNilsson");
+        analyser.addText("jag heter Love Nilsson");
         analyser.addText("Hej");
         analyser.addText("Hej");
         analyser.addText("stop");
-        assertEquals(4, analyser.getRowCount());
+        assertEquals(4, analyser.rowCount());
     }
-        @Test
+
+    @Test
     public void countWords() {
-            TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
-            analyser.addText("Hej");
-            analyser.addText("jag heter LoveNilsson");
-        assertEquals(4, TextAnalyserCharAndRow.wordCount());
+        TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
+        analyser.addText("Hej");
+        analyser.addText("jag heter Love Nilsson");
+        analyser.addText("stop");
+        assertEquals(5, analyser.wordCount());
+    }
+
+    @Test
+    public void noWordsStop() {
+        TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
+        analyser.addText("");
+        analyser.addText("");
+        analyser.addText("stop");
+        assertEquals(2, analyser.rowCount());
+        assertEquals(0, analyser.charCount());
+        assertEquals(0, analyser.wordCount());
+
+    }
+
+    @Test
+    public void longestWord() {
+        TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
+        analyser.addText("Hej");
+        analyser.addText("Jag heter Love Nilsson");
+        analyser.addText("Abrakadabra"); //11 tecken
+        analyser.addText("stop");
+        assertEquals("Abrakadabra",analyser.getLongestWord());
     }
 }
