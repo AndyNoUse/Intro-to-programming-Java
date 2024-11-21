@@ -1,10 +1,10 @@
 public class TextAnalyserCharAndRow {
 
     //RADER OCH TECKEN KLASSEN
-    private String text;
-    private int antalTecken = 0;
-    private int antalRader = 0;
-    private int antalOrd = 0;
+    private String text = "";
+    private int charCount = 0;
+    private int rowCount = 0;
+    private int wordCount = 0;
     private String longestWord = "";
 
     public boolean addText(String text) {
@@ -13,8 +13,8 @@ public class TextAnalyserCharAndRow {
         }
 
         this.text = text;
-        antalRader++;
-        antalTecken += text.length();
+        rowCount++;
+        charCount += text.length();
 
         if (text.equals(""))
             return true;
@@ -25,22 +25,20 @@ public class TextAnalyserCharAndRow {
                 longestWord = word;
             }
         }
-
-        antalOrd += words.length;
-
+        wordCount += words.length;
         return true;
     }
 
     public int charCount() {
-        return antalTecken;
+        return charCount;
     }
 
     public int rowCount() {
-        return antalRader;
+        return rowCount;
     }
 
     public int wordCount() {
-        return antalOrd;
+        return wordCount;
     }
 
     public String getLongestWord() {

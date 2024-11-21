@@ -16,9 +16,9 @@ public class TextAnalyserMain {
 
         } while (loop);
 
-        System.out.println("Antal tecken (med blanksteg): " + analyser.charCount());
         System.out.println("Antal rader: " + analyser.rowCount());
+        System.out.println("Antal tecken (med blanksteg): " + analyser.charCount());
         System.out.println("Antal ord: " + analyser.wordCount());
-        System.out.println("Längsta ordet: " + analyser.getLongestWord() );
+        System.out.println("Längsta ordet är: " + analyser.getLongestWord());
     }
 }

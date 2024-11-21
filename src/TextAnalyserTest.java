@@ -33,7 +33,7 @@ public class TextAnalyserTest {
     public void charCounter() {
         TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
         analyser.addText("Hej");
-        analyser.addText("jag heter Love Nilsson"); //27 tecken, 5 ord, 2 rader, längsta ordet Nilsson.
+        analyser.addText("jag heter Love Nilsson"); //25 tecken, 5 ord, 2 rader, längsta ordet Nilsson.
         analyser.addText("stop");
         assertEquals(25, analyser.charCount());
     }
@@ -71,12 +71,12 @@ public class TextAnalyserTest {
     }
 
     @Test
-    public void longestWord() {
+    public void longestWordAbrakadabra() {
         TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
         analyser.addText("Hej");
         analyser.addText("Jag heter Love Nilsson");
         analyser.addText("Abrakadabra"); //11 tecken
         analyser.addText("stop");
-        assertEquals("Abrakadabra",analyser.getLongestWord());
+        assertEquals("Abrakadabra", analyser.getLongestWord());
     }
 }
