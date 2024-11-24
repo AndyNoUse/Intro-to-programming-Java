@@ -3,8 +3,6 @@ Redogör för en likhet och en skillnad mellan programmeringsspråken Java och P
 En likhet är att de båda är objektorienterade och har då stöd för klasser, objekt, arv, inkapsling.
 En stor skillnad är att Python är dynamiskt typat medan Java är statiskt typat.
 Det betyder att en variabel i python bestäms vid körning, medan i Java är variabeln bestämd innan körning och kan inte ändras senare
-t.ex
-
 
 Redogöra för följande termer:
 -Objekt - Det är en specifik instans av en klass som innehåller attribut och metoder från våran klass. 
@@ -12,9 +10,7 @@ Redogöra för följande termer:
 -Attribut - Saker som objektet är, har och kan ändra. Beteende kan påverka våra attribut, till exempel äter vi mycket så påverkas vikten eller om vi ökar farten så ändras våran hastighet.
 
 Redogöra för de grundläggande principerna för versionshantering - Vi jobbar med olika grenar av vår kod. Den centrala grenen är Main eller Master-branchen, där hämtar vi koden för våra sidogrenar, och när vi ska skicka koden utgår vi också ifrån den här. När vi skapar en ny version för våra kunder, baserar vi den alltid på koden i Master-branchen.
-
 Master branschen ska vara tip-topp, vältestad, Fungerar väl. Vi jobbar inte direkt mot den då vi vill bibehålla dess kvalitet. Utan vi jobbar mot Feature-branch. Om vi kanske vill rätta till en bug, så gör vi en Bug-branch.
-
 När Featuren-branchen eller bug-branchen är klar gör vi en merge med Master branch och hoppas att det inte är merge konflikt. Om det blir det, så rättar vi till det och ser till att koden passar ihop bra
 
 Beskriv kort utvecklingsprocessen TDD- Arbetscykeln går till genom att vi skriver ett enhetstest som vi vet inte kommer fungera först (TEST FAILS). För att koden vi testar finns inte än.
