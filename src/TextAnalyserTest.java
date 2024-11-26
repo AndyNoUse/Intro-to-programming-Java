@@ -79,4 +79,40 @@ public class TextAnalyserTest {
         analyser.addText("stop");
         assertEquals("Abrakadabra", analyser.getLongestWord());
     }
+
+    @Test
+    public void emptyInput() {
+        TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
+        analyser.addText("stop");
+
+        assertEquals(0, analyser.rowCount());
+        assertEquals(0, analyser.charCount());
+        assertEquals(0, analyser.wordCount());
+    }
+@Test
+    public void onlySpaces() {
+        TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
+        analyser.addText("   "); // 3 blanksteg
+        analyser.addText("      "); //6 blanksteg
+        analyser.addText("stop");
+
+        assertEquals(2, analyser.rowCount());
+        assertEquals(9, analyser.charCount());
+        assertEquals(0, analyser.wordCount());
+    }
+    @Test
+    public void specialCharactersAndNumbers() {
+        TextAnalyserCharAndRow analyser = new TextAnalyserCharAndRow();
+        analyser.addText("12345"); // 5 chars
+        analyser.addText("@#$%^&"); //6 chars
+        analyser.addText("Hello123"); // 8 chars
+        analyser.addText("漢語"); // 2 kinesiska chars
+        analyser.addText("!! !!"); // 5 chars, 2 ord
+        analyser.addText("stop");
+
+        assertEquals(5, analyser.rowCount());
+        assertEquals(26, analyser.charCount());
+        assertEquals(6, analyser.wordCount());
+        assertEquals("Hello123", analyser.getLongestWord());
+    }
 }
