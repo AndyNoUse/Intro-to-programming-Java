@@ -115,4 +115,13 @@ public class TextAnalyserTest {
         assertEquals(6, analyser.wordCount());
         assertEquals("Hello123", analyser.getLongestWord());
     }
+    @Test
+    public void longestWordSameLength(){
+        TextAnalyserCharAndRow analsyer = new TextAnalyserCharAndRow();
+        analsyer.addText("katt hatt");
+        analsyer.addText("stop");
+
+        assertEquals("katt, hatt",analsyer.getLongestWord());
+
+    }
 }

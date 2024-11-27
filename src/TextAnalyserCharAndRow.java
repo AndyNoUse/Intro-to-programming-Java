@@ -6,6 +6,7 @@ public class TextAnalyserCharAndRow {
     private int rowCount = 0;
     private int wordCount = 0;
     private String longestWord = "";
+    private int lengthofLongestWord = 0;
 
     public boolean addText(String text) {
         if (text.equalsIgnoreCase("stop")) {
@@ -21,8 +22,13 @@ public class TextAnalyserCharAndRow {
 
         String[] words = text.split(" ");
         for (String word : words) {
-            if (word.length() > longestWord.length()) {
-                longestWord = word;
+            if (word.length() > lengthofLongestWord) {
+                lengthofLongestWord = word.length();
+                longestWord = word; // Byt ut innehållet med det nya längsta ordet
+            } else if (word.length() == lengthofLongestWord) {
+                if (!longestWord.contains(word)) {
+                    longestWord += ", " + word; // Lägg till om ordet redan inte finns
+                }
             }
         }
         wordCount += words.length;
@@ -44,4 +50,5 @@ public class TextAnalyserCharAndRow {
     public String getLongestWord() {
         return longestWord;
     }
+
 }
